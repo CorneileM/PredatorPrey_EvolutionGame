@@ -1,3 +1,4 @@
+# Import libraries
 import numpy as np
 import matplotlib.pyplot as plt
 from PIL import Image
@@ -21,7 +22,7 @@ rgbArray[..., 2] = land_array_B * 255
 img = Image.fromarray(rgbArray)
 
 # Save the image to a file
-img.save('rgbArray_img.jpeg')
+img.save('Array_files/rgbArray_img.jpeg')
 
 # --------------------------------------------------------------------------------------------
 
@@ -75,13 +76,13 @@ for i in range(10000):
         x, y = (x+prey_speed, y)
 
     # If the prey reaches the edge of the array on either side, it will turn around and move in the opposite direction
-    if x > array_size:
+    if x > array_size-1:
         x = x - prey_speed
-    elif x < 0:
+    elif x < 1:
         x = x + prey_speed
-    elif y > array_size:
+    elif y > array_size-1:
         y = y - prey_speed
-    elif y < 0:
+    elif y < 1:
         y = y + prey_speed
     
     # Change the cell value of the prey's current position to 1
@@ -102,13 +103,13 @@ for i in range(10000):
         a, b = (a+pred_speed, b)
 
     # If the predator reaches the edge of the array on either side, it will turn around and move in the opposite direction
-    if a > array_size:
+    if a > array_size-1:
         a = a - pred_speed
-    elif a < 0:
+    elif a < 1:
         a = a + pred_speed
-    elif b > array_size:
+    elif b > array_size-1:
         b = b - pred_speed
-    elif b < 0:
+    elif b < 1:
         b = b + pred_speed
     
     # Change the cell value of the predator's current position to 1
@@ -126,10 +127,10 @@ for i in range(10000):
     img = Image.fromarray(rgbArray)
 
     # Save the image to a file
-    img.save('rgbArray_img.jpeg')
+    img.save('Array_files/rgbArray_img.jpeg')
 
     # Read the image back in with cv2
-    rgbArray_img = cv2.imread("rgbArray_img.jpeg", cv2.IMREAD_COLOR)
+    rgbArray_img = cv2.imread("Array_files/rgbArray_img.jpeg", cv2.IMREAD_COLOR)
     
     # Display the modified image
     cv2.imshow("EvolGame", rgbArray_img)
