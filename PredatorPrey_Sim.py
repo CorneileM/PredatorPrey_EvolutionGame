@@ -148,5 +148,3 @@ cv2.destroyAllWindows()
 plt.imshow(prey_array_R, cmap="hot", interpolation='nearest')   
 plt.show()
 
-
-
