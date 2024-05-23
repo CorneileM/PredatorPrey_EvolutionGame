@@ -144,8 +144,3 @@ for i in range(10000):
 
 # Close the window
 cv2.destroyAllWindows()
-
-# Display the final image
-plt.imshow(prey_array_R, cmap="hot", interpolation='nearest')   
-plt.show()
-
