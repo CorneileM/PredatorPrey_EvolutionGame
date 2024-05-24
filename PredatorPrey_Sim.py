@@ -29,14 +29,14 @@ img.save('Array_files/rgbArray_img.jpeg')
 ### PARAMETERS ###
 
 # PREY #
-# Set up a data frame to store prey parameters for multiple prey
+# TODO: Set up a data frame to store prey parameters for multiple prey
 # Each row will represent a different prey individual (prey1, prey2, etc.)
 # Each column will represent a different parameter (e.g. speed, decay rate, energy, etc.)
-prey_df = pd.DataFrame(columns=['speed', 'decay'])
+# prey_df = pd.DataFrame(columns=['speed', 'decay'])
 # Add a row to the data frame for prey1
 
-prey_speed = 1
-prey_decay = 0.99
+prey_speed = 1 # determines prey movement speed
+prey_decay = 0.99 # sets the rate at which a prey's trail decays
 
 # Set up a random starting position (x,y) in the array for the prey
 # random number between 1 and array_size
